@@ -30,22 +30,11 @@
           />
           <!-- OUTPUT -->
           <div class="output" submit>
-            <p>output of the url should be here and can be copied</p>
+            <p id="output" title="copy">https://example.com</p>
           </div>
 
           <div>
-            <button type="submit" class="trim-btn">
-              ✂
-              <!-- 
-              <figure>
-                <img
-                  src="/wand.png"
-                  class="wand"
-                  alt="magic_wand"
-                  draggable="false"
-                />
-              </figure> -->
-            </button>
+            <button type="submit" class="trim-btn">✂</button>
           </div>
           <div class="remark">
             <p>
@@ -66,6 +55,7 @@
     </main>
 
     <script src="script.js"></script>
+    <script type="module" src="./config/index.js"></script>
     <script>
       const Trim = document.querySelector("#url");
       Trim.addEventListener("submit", (e) => {

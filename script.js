@@ -1,7 +1,46 @@
+const API_URL = "https://sh-akgc.onrender.com";
+const BASE_URL = "https://api-ssl.bitly.com";
+const ACESS_TOKEN = "220700cde8d496fc81ab71f5dfb9a0c6d8793d75";
+
+const output = document.querySelector("#output");
+const copy = document.querySelector("#copy");
+
+const copyClip = () => {
+  const textarea = document.createElement("textarea");
+  textarea.value = output.innerText;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+  console.log("copied");
+};
+
+copy.addEventListener("click", copyClip);
+
 const Shorten = async (el) => {
   const [text] = el;
+  const output = document.querySelector("#output");
 
-  const response = await fetch("", {});
+  const response = await fetch(`${BASE_URL}/v4/shorten`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${ACESS_TOKEN}`,
+    },
+    body: JSON.stringify({
+      long_url: text.value,
+      domain: "bit.ly",
+    }),
+  });
 
-  console.log(text.value);
+  const data = await response.json();
+
+  if (response.ok) {
+    output.innerText = `${data.link}`;
+    copy.style.display = "inline";
+    text.value == "";
+  } else {
+    output.innerHTML = `${data.description}`;
+    copy.style.display = "none";
+  }
 };
