@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Cut that long link into pieces" />
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
+    <!-- FONTS CDN -->
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@200,700,400,600,300,1,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Scissors || Pieces it</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>P✂s</h1>
+        <p>shorten the mf long URL</p>
+      </header>
+      <section class="form">
+        <form id="url" class="form-pop">
+          <input
+            type="text"
+            name="Paste URL here.."
+            placeholder="Paste URL here..."
+            id="input"
+            class="url-inp"
+          />
+          <!-- OUTPUT -->
+          <div class="output" submit>
+            <p>output of the url should be here and can be copied</p>
+          </div>
+
+          <div>
+            <button type="submit" class="trim-btn">
+              Trim URL
+
+              <figure>
+                <img
+                  src="/wand.png"
+                  class="wand"
+                  alt="magic_wand"
+                  draggable="false"
+                />
+              </figure>
+            </button>
+          </div>
+          <div class="remark">
+            <p>
+              built with rage and anger by
+              <span>
+                <a
+                  href="https:/x.com/HeyVickyJay/"
+                  rel="noreferrer"
+                  target="_blank"
+                  style="color: green"
+                  >VickyJay😑</a
+                >
+              </span>
+            </p>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+      const Trim = document.querySelector("#url");
+
+      Trim.addEventListener("submit", (e) => e.preventDefault());
+    </script>
+  </body>
+</html>
