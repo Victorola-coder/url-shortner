@@ -26,7 +26,6 @@
             type="text"
             name="Paste URL here.."
             placeholder="Paste URL here..."
-            id="input"
             class="url-inp"
           />
           <!-- OUTPUT -->
@@ -36,8 +35,8 @@
 
           <div>
             <button type="submit" class="trim-btn">
-              Trim URL
-
+              ✂
+              <!-- 
               <figure>
                 <img
                   src="/wand.png"
@@ -45,7 +44,7 @@
                   alt="magic_wand"
                   draggable="false"
                 />
-              </figure>
+              </figure> -->
             </button>
           </div>
           <div class="remark">
@@ -56,7 +55,7 @@
                   href="https:/x.com/HeyVickyJay/"
                   rel="noreferrer"
                   target="_blank"
-                  style="color: green"
+                  style="color: green !important"
                   >VickyJay😑</a
                 >
               </span>
@@ -69,8 +68,10 @@
     <script src="script.js"></script>
     <script>
       const Trim = document.querySelector("#url");
-
-      Trim.addEventListener("submit", (e) => e.preventDefault());
+      Trim.addEventListener("submit", (e) => {
+        e.preventDefault();
+        Shorten(Trim);
+      });
     </script>
   </body>
 </html>
